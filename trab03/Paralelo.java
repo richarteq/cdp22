@@ -32,6 +32,23 @@ public class Paralelo {
         }
 		
 		
+		int vivos = hilitos2.size();
+		while(vivos>0) {
+			int encuesta = 0;
+			for (Thread hilito : hilitos2) {
+				if(hilito.isAlive()) {
+					System.out.println(hilito.getName() + " Sigo atendiendo....");
+					encuesta = encuesta+1;
+				}else {
+					System.out.println(hilito.getName() + " Ya acabe. Gracias");
+				}
+			}
+			vivos=encuesta;
+		}
+		
+		
+		
+		
 		
 
 	}
